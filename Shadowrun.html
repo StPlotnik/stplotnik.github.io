@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Shadowrun</title>
+		<style>
+			input[type="text"]{
+				border: 0px;
+				outline: none;
+			}
+			input[type="number"]{
+				border: 0px;
+				outline: none;		
+			}
+			input[type="number"]::-webkit-inner-spin-button{
+				display: none;
+			}	
+		</style>
+	</head>
+	<body>
+		<table cellpadding="5" border="1" style="border-collapse:collapse">
+			<thead>
+				<tr><td colspan="11">Дроны</td></tr>
+				<tr>
+					<td>Дрон</td>
+					<td>Управляемость</td>
+					<td>Скорость</td>
+					<td>Ускорение</td>
+					<td>Тело</td>
+					<td>Броня</td>
+					<td>Пилот</td>
+					<td>Сенсор</td>
+					<td>Вместимость</td>
+					<td>Доступность</td>
+					<td>Цена</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="text" size="28" placeholder="Имя дрона"></td>
+					<td><input oninput="limit(this,1);" type="number" placeholder="Упр" min="0" max="9"/></td>
+					<td><input oninput="limit(this,1);" type="number" placeholder="Скор" min="0" max="9"/></td>
+					<td><input oninput="limit(this,1);" type="number" placeholder="Уск" min="0" max="9"/></td>
+					<td><input oninput="limit(this,1);" type="number" placeholder="Тело" min="0" max="9"/></td>
+					<td><input oninput="limit(this,1);" type="number" placeholder="Броня" min="0" max="99"/></td>
+					<td><input oninput="limit(this,1);" type="number" placeholder="Пилот" min="0" max="99"/></td>
+					<td><input oninput="limit(this,1);" type="number" placeholder="Сенсор" min="0" max="999"/></td>
+					<td><input oninput="limit(this,1);" type="number" placeholder="Вмест" min="0" max="99"/></td>
+					<td><input oninput="limit(this,1);" type="number" placeholder="Дост" min="0" max="9"/></td>
+					<td><nobr><input oninput="limit(this,5);" type="number" placeholder="Цена" min="0" max="99999"/>¥</nobr></td>
+				</tr>
+			</tbody>
+		</table>
+		<script type="text/javascript">
+		function limit(element,maxLenght)
+		{
+			if (element.value.length > maxLenght) element.value = element.value.substr(0, maxLenght);
+		}
+		</script>
+
+	</body>
+</html>
